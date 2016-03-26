@@ -1,4 +1,3 @@
-var getJSON = require('get-json');
 var mongoose = require('mongoose');
 var User = require('./models/user.js');
 var Members = require('./models/member.js')
