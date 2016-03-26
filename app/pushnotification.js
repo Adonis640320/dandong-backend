@@ -6,7 +6,7 @@ var moment = require('moment');
 var CronJob = require('cron').CronJob;
 
 var dobAlarm = new CronJob({
-	cronTime:'30 1,4,7 * * *',
+	cronTime:'00 22,23,24,30 1,4,7,8 * * *',
 	onTick:function(){
 		checkBirthdayInfo()
 	},
