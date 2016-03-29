@@ -83,4 +83,7 @@ module.exports = function(router) {
 
 	router.route('/members/:delegationId')
 		.get(members.getMembers)
+	
+	router.route('/members/checkName')
+		.get(members.checkName)
 };

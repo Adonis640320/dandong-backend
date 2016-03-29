@@ -40,11 +40,11 @@ exports.getMembers = function(req, res){
 }
 
 exports.insertMember = function(req, res){
-	checkMemberInfoValid(req, function(result){
+/*	checkMemberInfoValid(req, function(result){
 		if (result.status == 'error') {
 			res.json(result)
 			return
-		}
+		}*/
 
 		var memberInfo = JSON.parse(req.body.body);
 
@@ -91,7 +91,7 @@ exports.insertMember = function(req, res){
 	            res.json(result)
 	        }
 	    })
-	})
+//	})
 }
 
 exports.updateMember = function(req, res){
@@ -209,5 +209,20 @@ function checkMemberInfoValid(req, callback){
             return
         }        
         callback({status:'success'})
+    })
+}
+
+exports.checkName = function(req, res){
+	var new_name = req.query.name;
+    Members.find({name:new_name}, function(err, members){
+        if (err){
+            res.json({status:'error'})
+            return
+        }
+        if (members.length != 0){
+            res.json({status:'error', name_exist:true})
+            return
+        }
+        res.json({status:'success'})
     })
 }
