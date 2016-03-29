@@ -85,5 +85,5 @@ module.exports = function(router) {
 		.get(members.getMembers)
 	
 	router.route('/members/checkName')
-		.get(members.checkName)
+		.get(members.checkNameValid)
 };

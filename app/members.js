@@ -212,7 +212,7 @@ function checkMemberInfoValid(req, callback){
     })
 }
 
-exports.checkName = function(req, res){
+exports.checkNameValid = function(req, res){
 	var new_name = req.query.name;
 	console.log(new_name)
     Members.find({name:new_name}, function(err, members){
