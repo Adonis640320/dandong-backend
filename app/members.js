@@ -198,7 +198,8 @@ exports.deleteMemberById = function(req, res){
 }
 
 function checkMemberInfoValid(req, callback){
-    Members.find({name:req.body.name}, function(err, members){
+	var memberInfo = JSON.parse(req.body.body);
+    Members.find({name:memberInfo.name}, function(err, members){
         if (err){
             callback({status:'error'})
             return

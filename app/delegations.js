@@ -65,11 +65,11 @@ exports.insertDelegation = function(req, res){
 }
 
 exports.updateDelegation = function(req, res){
-	checkDelegationInfoValid(req, function(result){
+/*	checkDelegationInfoValid(req, function(result){
 		if (result.status == 'error') {
 			res.json(result)
 			return
-		}
+		}*/
 		var id = req.query.id,
 			name = req.query.name,
 			count = req.query.count,
@@ -98,7 +98,7 @@ exports.updateDelegation = function(req, res){
 			    }
 			})
 		})
-	})
+//	})
 }
 
 exports.getDelegationById = function(req, res){
