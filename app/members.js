@@ -214,12 +214,15 @@ function checkMemberInfoValid(req, callback){
 
 exports.checkName = function(req, res){
 	var new_name = req.query.name;
+	console.log(new_name)
     Members.find({name:new_name}, function(err, members){
         if (err){
             res.json({status:'error'})
             return
         }
+        console.log('finding..')
         if (members.length != 0){
+        	console.log('found ')
             res.json({status:'error', name_exist:true})
             return
         }
