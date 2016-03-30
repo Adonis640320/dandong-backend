@@ -23,7 +23,7 @@ var options = {
 	gateway: 'gateway.sandbox.push.apple.com',
 	cert: 'app/dev_cert.pem',
 	key: 'app/dev_key.pem',
-	passphrase: "ramin"
+	passphrase: "dandong"
 };
 var apnConnection = new apn.Connection(options);
 var checkBirthdayInfo = exports.checkBirthdayInfo = function(req, res){
